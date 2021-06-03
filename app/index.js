@@ -1,7 +1,3 @@
-// import image from '../images';
+// import alpilles from '../images/alpilles.jpg';
 
-// const image = new Image();
-
-// if(IS_DEVELOPMENT){
-//     console.log('')
-// }
+// console.log(alpilles)
