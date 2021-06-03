@@ -1,3 +1,3 @@
-// import alpilles from '../images/alpilles.jpg';
+import alpilles from './images/alpilles.jpg';
 
-// console.log(alpilles)
+console.log(alpilles)

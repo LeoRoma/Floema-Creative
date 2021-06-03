@@ -2,9 +2,11 @@ const path = require('path');
 
 const webpack = require('webpack');
 
+const {CleanWebpackPlugin} = require('clean-webpack-plugin'); // Clean public folder each time we run the application
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'dev';
 
@@ -20,6 +22,11 @@ module.exports = {
         path.join(dirStyles, 'index.scss')
     ],
 
+    optimization: {
+        minimize: true,
+        minimizer: [new TerserPlugin()]
+    },
+
     resolve: {
         modules: [
             dirApp,
@@ -31,6 +38,8 @@ module.exports = {
     },
 
     plugins: [
+        new CleanWebpackPlugin(),
+
         new webpack.DefinePlugin({
             IS_DEVELOPMENT
         }),
@@ -83,7 +92,7 @@ module.exports = {
 
                     },
                     {
-                        loader: 'postcss-loader',
+                        loader: 'postcss-loader'
                     },
                     {
                         loader: 'sass-loader'
