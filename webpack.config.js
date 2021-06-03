@@ -16,7 +16,7 @@ const dirVideos = path.join(__dirname, 'videos');
 const dirNode = 'node_modules';
 
 module.exports = {
-    entry: [
+    entry: [     
         path.join(dirApp, 'index.js'),
         path.join(dirStyles, 'index.scss')
     ],
