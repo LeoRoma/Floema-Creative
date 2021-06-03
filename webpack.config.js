@@ -9,10 +9,9 @@ const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'dev';
 
 const dirApp = path.join(__dirname, 'app');
-const dirImages = path.join(__dirname, 'images');
 const dirShared = path.join(__dirname, 'shared');
 const dirStyles = path.join(__dirname, 'styles');
-const dirVideos = path.join(__dirname, 'videos');
+// const dirVideos = path.join(__dirname, 'videos'); in case I will use videos
 const dirNode = 'node_modules';
 
 module.exports = {
@@ -24,10 +23,9 @@ module.exports = {
     resolve: {
         modules: [
             dirApp,
-            dirImages,
             dirShared,
             dirStyles,
-            dirVideos,
+            // dirVideos, In case I will use videos
             dirNode
         ]
     },
