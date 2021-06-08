@@ -14,7 +14,7 @@ app.get('/collection', (req, res) => {
     res.render('pages/collection');
 })
 
-app.get('/detail/:id', (req, res) => {
+app.get('/detail/:uid', (req, res) => {
     res.render('pages/detail');
 })
 
