@@ -8,6 +8,13 @@ const port = 3000;
 const Prismic = require('@prismicio/client');
 const PrismicDOM = require('prismic-dom');
 
+const initApi = (req) => {
+    return Prismic.getApi(process.end.PRISMIC_ENDPOINT, {
+        accessToken: process.env.PRISMIC_ACCESS_TOKEN,
+        req: req
+    });
+}
+
 const handleLinkResolver = (doc) => {
   
     // Define the url depending on the document type
