@@ -21,4 +21,15 @@ block content
                 svg.detail__information__highlight__icon
                   use(xlink:href=`sprite-${highlight.highlights_icon.toLowerCase()}`)
 
-                | #{highlight.highlights_text}
+                //- for having text inside a paragraph can use the concatenator syntax with #
+                //- | #{highlight.highlights_text} 
+
+                span.detail__information__highlight__text=highlight.highlights_text
+
+          .detail__information__list
+            each item in product.data.informations  
+              p.detail__information__item 
+                strong.detail__information__item__title=item.informations_label
+                span.detail__information__item__description=item.informations_description
+
+          a.detail__information__link(href=product.data.link_url.url target="_blank")=product.data.link_text
