@@ -34,7 +34,8 @@ app.use((req, res, next) => {
         linkResolver: handleLinkResolver
     };
     // add PrismicDOM in locals to access them in templates.
-    res.locals.PrismicDOM = PrismicDOM;
+    res.locals.PrismicDOM = PrismicDOM; // access to the prismic dome for the frontend
+
     next();
 });
 
