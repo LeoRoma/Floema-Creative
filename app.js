@@ -63,13 +63,18 @@ app.get('/collection', (req, res) => {
 })
 
 app.get('/detail/:uid', async (req, res) => {
-    console.log(req.params.uid)
+    // console.log(req.params.uid)
     
     const api = await initApi(req);
     const meta = await api.getSingle('meta');
-    const product = await api.getByUID('product', req.params.uid);
+    const product = await api.getByUID('product', req.params.uid, {
+        fetchLinks: 'collection.title'
+    });
 
     console.log(product);
+    // product.data.highlights.forEach(element => {
+    //     console.log(element)
+    // });
 
     res.render('pages/detail', {
         meta,

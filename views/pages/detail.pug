@@ -8,4 +8,17 @@ block content
     .detail__wrapper 
       figure.detail__media
         img.detail__media__image(alt=product.data.image src=product.data.image.url)
-  h1.collection__title Detail
+
+      .detail__information
+        p.detail__information__collection=product.data.collection.data.title
+
+        h1.detail__information__title=product.data.title
+
+        .detail__information__content
+          .detai__information__highlights
+            each highlight in product.data.highlights
+              p.detail__information__highlight
+                svg.detail__information__highlight__icon
+                  use(xlink:href=`sprite-${highlight.highlights_icon.toLowerCase()}`)
+
+                | #{highlight.highlights_text}
