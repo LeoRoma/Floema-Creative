@@ -42,31 +42,32 @@ app.use((req, res, next) => {
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-app.get('/about', (req, res) => {
-    initApi(req).then(async api => {
-        const meta = await api.getSingle('meta');
-        const about = await api.getSingle('about');
+app.get('/about', async (req, res) => {
+    const api = await initApi(req);
+    const meta = await api.getSingle('meta');
+    const about = await api.getSingle('about');
 
-        res.render('pages/about', {
-            about,
-            meta
-        });
+    res.render('pages/about', {
+        about,
+        meta
     });
+
 })
 
 app.get('/collection', (req, res) => {
     res.render('pages/collection');
 })
 
-app.get('/detail/:uid', (req, res) => {
+app.get('/detail/:uid', async (req, res) => {
     console.log(req.params.uid)
+    
+    const api = await initApi(req);
+    const meta = await api.getSingle('meta');
+    const product = await api.getByUID('product', req.params.uid);
 
-    initApi(req).then(async api => {
-        const meta = await api.getSingle('meta');
-        
-        res.render('pages/detail', {
-            meta
-        });
+    res.render('pages/detail', {
+        meta,
+        product
     });
 })
 
