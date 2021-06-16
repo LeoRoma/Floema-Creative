@@ -61,9 +61,16 @@ app.get('/about', async (req, res) => {
 app.get('/collections', async (req, res) => {
     const api = await initApi(req);
     const meta = await api.getSingle('meta');
-    const { results: collections } = await api.query(Prismic.Predicates.at('document.type', 'collection'));
+    const home = await api.getSingle('home');
+    const { results: collections } = await api.query(Prismic.Predicates.at('document.type', 'collection'), {
+        fetchLinks: 'product.image'
+    });
 
     console.log(collections);
+
+    collections.forEach(collection => {
+        console.log(collection.data.products[0].products_product);
+    })
 
     res.render('pages/collections', {
         meta,
