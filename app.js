@@ -43,18 +43,13 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 app.get('/about', (req, res) => {
-    initApi(req).then(api => {
-        api.query([
-            Prismic.Predicates.any('document.type', ['about', 'meta']),
-            // Prismic.Predicates.at('document.type', 'about')
-        ]).then(response => {
-            const { results } = response;
-            const [about, meta] = results;
+    initApi(req).then(async api => {
+        const meta = await api.getSingle('meta');
+        const about = await api.getSingle('about');
 
-            res.render('pages/about', {
-                about,
-                meta
-            });
+        res.render('pages/about', {
+            about,
+            meta
         });
     });
 })
@@ -64,7 +59,15 @@ app.get('/collection', (req, res) => {
 })
 
 app.get('/detail/:uid', (req, res) => {
-    res.render('pages/detail');
+    console.log(req.params.uid)
+
+    initApi(req).then(async api => {
+        const meta = await api.getSingle('meta');
+        
+        res.render('pages/detail', {
+            meta
+        });
+    });
 })
 
 app.get('/home', (req, res) => {
