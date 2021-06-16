@@ -58,23 +58,27 @@ app.get('/about', async (req, res) => {
 
 })
 
-app.get('/collection', (req, res) => {
-    res.render('pages/collection');
+app.get('/collections', async (req, res) => {
+    const api = await initApi(req);
+    const meta = await api.getSingle('meta');
+    const { results: collections } = await api.query(Prismic.Predicates.at('document.type', 'collection'));
+
+    console.log(collections);
+
+    res.render('pages/collections', {
+        meta,
+        collections
+    });
 })
 
 app.get('/detail/:uid', async (req, res) => {
     // console.log(req.params.uid)
-    
+
     const api = await initApi(req);
     const meta = await api.getSingle('meta');
     const product = await api.getByUID('product', req.params.uid, {
         fetchLinks: 'collection.title'
     });
-
-    console.log(product);
-    // product.data.highlights.forEach(element => {
-    //     console.log(element)
-    // });
 
     res.render('pages/detail', {
         meta,
