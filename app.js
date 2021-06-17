@@ -42,22 +42,11 @@ const handleLinkResolver = doc => {
         return `/detail/${doc.slug}`;
     }
 
-    // Define the url depending on the document type
-    // if (doc.type === 'page') {
-    //   return '/page/' + doc.uid;
-    // } else if (doc.type === 'blog_post') {
-    //   return '/blog/' + doc.uid;
-    // }
-
     // Default to homepage
     return '/';
 }
 
 app.use((req, res, next) => {
-    // res.locals.ctx = {
-    //     endpoint: process.env.PRISMIC_ENDPOINT,
-    //     linkResolver: handleLinkResolver
-    // };
     res.locals.Link = handleLinkResolver;
 
     // add PrismicDOM in locals to access them in templates.
@@ -105,8 +94,6 @@ app.get('/about', async (req, res) => {
     const about = await api.getSingle('about');
     const defaults = await handleRequest(api);
     
-
-    console.log(about.data.body)
     res.render('pages/about', {
         ...defaults,
         about
