@@ -30,7 +30,9 @@ const initApi = req => {
 }
 
 const handleLinkResolver = doc => {
-
+    if(doc.type == 'product'){
+        return `/detail/${doc.slug}`
+    }
     // Define the url depending on the document type
     // if (doc.type === 'page') {
     //   return '/page/' + doc.uid;
@@ -47,7 +49,7 @@ app.use((req, res, next) => {
     //     endpoint: process.env.PRISMIC_ENDPOINT,
     //     linkResolver: handleLinkResolver
     // };
-    res.locals.Links = handleLinkResolver;
+    res.locals.Link = handleLinkResolver;
 
     // add PrismicDOM in locals to access them in templates.
     res.locals.PrismicDOM = PrismicDOM; // access to the prismic dome for the frontend
