@@ -40,6 +40,9 @@ app.use((req, res, next) => {
     // add PrismicDOM in locals to access them in templates.
     res.locals.PrismicDOM = PrismicDOM; // access to the prismic dome for the frontend
 
+    res.locals.Numbers = index => {
+        return index == 0 ? 'One' : index == 1 ? 'Two' : index == 2 ? 'Three' : index == 3 ? 'Four' : '';
+    }
     next();
 });
 
