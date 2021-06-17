@@ -73,8 +73,9 @@ app.get('/collections', async (req, res) => {
     })
 
     res.render('pages/collections', {
-        meta,
-        collections
+        collections,
+        home,
+        meta
     });
 })
 
