@@ -1,11 +1,23 @@
 require('dotenv').config();
 
 const express = require('express');
+
+// need to understand what they do
+const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
+const logger = require('morgan');
 // const errorHandler = require('errorhandler'); to handle errors
 
 const app = express();
 const path = require('path');
 const port = 3000;
+
+// need to understand what they do
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(methodOverride());
+// app.use(errorHandler());
 
 const Prismic = require('@prismicio/client');
 const PrismicDOM = require('prismic-dom');
@@ -29,8 +41,6 @@ const handleLinkResolver = doc => {
     // Default to homepage
     return '/';
 }
-
-// app.use(errorHandler());
 
 app.use((req, res, next) => {
     // res.locals.ctx = {
