@@ -3,9 +3,9 @@ require('dotenv').config();
 const express = require('express');
 
 // need to understand what they do
-const bodyParser = require('body-parser');
-const methodOverride = require('method-override');
-const logger = require('morgan');
+// const bodyParser = require('body-parser');
+// const methodOverride = require('method-override');
+// const logger = require('morgan');
 // const errorHandler = require('errorhandler'); to handle errors
 
 const app = express();
@@ -13,10 +13,10 @@ const path = require('path');
 const port = 3000;
 
 // need to understand what they do
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:false}));
-app.use(methodOverride());
+// app.use(logger('dev'));
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({extended:false}));
+// app.use(methodOverride());
 // app.use(errorHandler());
 
 const Prismic = require('@prismicio/client');
@@ -61,6 +61,25 @@ app.use((req, res, next) => {
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
+app.get('/', async (req, res) => {
+    const api = await initApi(req);
+    const home = await api.getSingle('home');
+    const meta = await api.getSingle('meta');
+    const preloader = await api.getSingle('preloader');
+    
+    const { results: collections } = await api.query(Prismic.Predicates.at('document.type', 'collection'), {
+        fetchLinks: 'product.image'
+    });
+
+    console.log(home)
+    res.render('pages/home', {
+        collections,
+        home,
+        meta,
+        preloader
+    });
+})
+
 app.get('/about', async (req, res) => {
     const api = await initApi(req);
     const meta = await api.getSingle('meta');
@@ -77,19 +96,13 @@ app.get('/about', async (req, res) => {
 
 app.get('/collections', async (req, res) => {
     const api = await initApi(req);
-    const meta = await api.getSingle('meta');
     const home = await api.getSingle('home');
+    const meta = await api.getSingle('meta');
     const preloader = await api.getSingle('preloader');
 
     const { results: collections } = await api.query(Prismic.Predicates.at('document.type', 'collection'), {
         fetchLinks: 'product.image'
     });
-
-    console.log(collections);
-
-    collections.forEach(collection => {
-        console.log(collection.data.products[0].products_product);
-    })
 
     res.render('pages/collections', {
         collections,
@@ -100,11 +113,10 @@ app.get('/collections', async (req, res) => {
 })
 
 app.get('/detail/:uid', async (req, res) => {
-    // console.log(req.params.uid)
-
     const api = await initApi(req);
     const meta = await api.getSingle('meta');
     const preloader = await api.getSingle('preloader');
+
     const product = await api.getByUID('product', req.params.uid, {
         fetchLinks: 'collection.title'
     });
@@ -114,10 +126,6 @@ app.get('/detail/:uid', async (req, res) => {
         preloader,
         product
     });
-})
-
-app.get('/home', (req, res) => {
-    res.render('pages/home');
 })
 
 app.listen(port, () => {
