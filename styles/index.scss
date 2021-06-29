@@ -1,3 +1,8 @@
+@import './utils/variables.scss';
+@import './utils/functions.scss';
+@import './utils/mixins.scss';
+@import './utils/vendors.scss';
+
 @import'./base/reset.scss';
 
 @import './pages/about/about.scss';
