@@ -1,5 +1,5 @@
 body{
+  @extend %description-16;
+
   font-family: $font-suisse-bp;
-  font-size: 16px;
-  font-weight: 300;
 }
