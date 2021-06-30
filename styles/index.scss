@@ -1,7 +1,11 @@
 @import './utils/variables.scss';
 @import './utils/functions.scss';
 @import './utils/mixins.scss';
+@import './utils/responsive.scss';
 @import './utils/vendors.scss';
+
+@import './shared/descriptions.scss';
+@import './shared/titles.scss';
 
 @import './base/font.scss';
 @import'./base/reset.scss';
