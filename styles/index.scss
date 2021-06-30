@@ -3,7 +3,9 @@
 @import './utils/mixins.scss';
 @import './utils/vendors.scss';
 
+@import './base/font.scss';
 @import'./base/reset.scss';
+@import './base/base.scss';
 
 @import './pages/about/about.scss';
 @import './pages/about/content.scss';
