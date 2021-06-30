@@ -4,11 +4,13 @@
 @import './utils/responsive.scss';
 @import './utils/vendors.scss';
 
-@import './shared/descriptions.scss';
-@import './shared/titles.scss';
+// The files in shared folder suppose to be here but they don't load before reset.scss 
 
 @import './base/font.scss';
 @import'./base/reset.scss';
+
+@import './shared/titles.scss';
+@import './shared/descriptions.scss';
 @import './base/base.scss';
 
 @import './pages/about/about.scss';
