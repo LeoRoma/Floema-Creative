@@ -5,13 +5,14 @@
 @import './utils/vendors.scss';
 
 // The files in shared folder suppose to be here but they don't load before reset.scss 
-
-@import './base/font.scss';
-@import'./base/reset.scss';
-
 @import './shared/titles.scss';
 @import './shared/descriptions.scss';
+
+@import './base/font.scss';
+// @import'./base/reset.scss' not sure if use it, blocks other file to be loaded;
 @import './base/base.scss';
+
+@import './components/preloader.scss';
 
 @import './pages/about/about.scss';
 @import './pages/about/content.scss';
