@@ -1,5 +1,7 @@
 .collections {
   @extend %cover;
+
+
 }
 
 .collections__wrapper {
@@ -16,7 +18,9 @@
 }
 
 .collections__titles__label {
+  @extend %description-12;
   text-align: center;
+  text-transform: uppercase;
   transform: rotate(90deg);
 }
 
