@@ -8,7 +8,7 @@ block content
     .collections__wrapper
       .collections__titles 
         each collection, index in collections
-          .collections__titles__label=`${home.data.collection} ${Numbers(index)}`
+          .collections__titles__label!=`${home.data.collection} <br> ${Numbers(index)}`
           .collections__titles__title=collection.data.title
 
 

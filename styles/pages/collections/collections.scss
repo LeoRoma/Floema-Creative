@@ -7,18 +7,21 @@
 }
 
 .collections__titles {
+  align-items: center;
+  display: flex;
   left: 50%;
   position: absolute;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) rotate(-90deg);
   top: 50%;
 }
 
 .collections__titles__label {
-
+  text-align: center;
+  transform: rotate(90deg);
 }
 
 .collections__titles__title {
-
+  @extend %title-200;
 }
 
 .collections__gallery {
