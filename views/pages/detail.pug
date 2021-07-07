@@ -24,7 +24,7 @@ block content
                 //- for having text inside a paragraph can use the concatenator syntax with #
                 //- | #{highlight.highlights_text} 
 
-                span.detail__information__highlight__text=highlight.highlights_text
+                span.detail__information__highlight__text!=highlight.highlights_text.replace(/\n/, '<br>')
 
           .detail__information__list
             each item in product.data.informations  

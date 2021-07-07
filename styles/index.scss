@@ -1,16 +1,18 @@
+// not sure if use reset.scss, blocks other file to be loaded;
+@import'./base/reset.scss';
+
 @import './utils/variables.scss';
 @import './utils/functions.scss';
 @import './utils/mixins.scss';
-@import './utils/responsive.scss';
 @import './utils/vendors.scss';
+@import './utils/responsive.scss';
 
 // The files in shared folder suppose to be here but they don't load before reset.scss 
-@import './shared/titles.scss';
 @import './shared/descriptions.scss';
+@import './shared/titles.scss';
+
 
 @import './base/font.scss';
-// not sure if use reset.scss, blocks other file to be loaded;
-@import'./base/reset.scss';
 @import './base/base.scss';
 
 @import './components/preloader.scss';

@@ -1,3 +1,9 @@
+*,
+*:after,
+*:before{
+  box-sizing: border-box;
+}
+
 html{
   font-size: calc(100vw / 1920 * 10); // viewport divided by the design's screen size
 }
@@ -11,3 +17,11 @@ body{
     font-size: 100px;
   }
 }
+
+a{
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+}
+
+// part of the boiler plater
