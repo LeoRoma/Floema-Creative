@@ -9,7 +9,8 @@
 @import './shared/descriptions.scss';
 
 @import './base/font.scss';
-// @import'./base/reset.scss' not sure if use it, blocks other file to be loaded;
+// not sure if use reset.scss, blocks other file to be loaded;
+@import'./base/reset.scss';
 @import './base/base.scss';
 
 @import './components/preloader.scss';

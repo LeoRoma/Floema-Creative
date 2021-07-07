@@ -1,17 +1,18 @@
 .preloader{
   @extend %cover;
+  @extend %center;
 
   background: $color-contessa;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  color: $color-white;
+  display: none;
   text-align: center;
 }
 
 .preloader__text{
   @extend %title-53;
 
-  max-width: 66rem;
+  max-width: 70rem;
+  font-weight: normal;
 }
 
 .preloader__number{

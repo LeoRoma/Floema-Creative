@@ -1,9 +1,11 @@
 .detail {
+  @extend %cover;
 
+  @extend %center;
 }
 
 .detail__wrapper {
-
+  @extend %cover;
 }
 
 .detail__media {

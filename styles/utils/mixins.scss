@@ -6,6 +6,13 @@
   width: 100%;
 }
 
+%center{
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+}
+
 @mixin placeholder{
   &.placeholder {@content;}
   &::-webkit-input-placeholder {@content;}
