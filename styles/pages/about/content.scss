@@ -1,23 +1,35 @@
 .about__content {
+  margin: 20rem auto;
+  position: relative;
+  width: 125.8rem;
 
+  &:first-child{
+    margin-top: 0;
+  }
+
+  &:last-child{
+    margin-bottom: 0;
+  }
 }
 
 .about__content_wrapper {
-
+  display: flex;
 }
 
 .about__content__label {
-
+  width: 18rem;
+  // border: black solid;
 }
 
 .about__content__description {
-
+  width: 36.2rem;
+  // border: red solid;
 }
 
 .about__content__media {
-
+  position: absolute;
 }
 
 .about__content__media__image {
-  
+
 }
