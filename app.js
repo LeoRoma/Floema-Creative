@@ -3,8 +3,8 @@ require('dotenv').config();
 const express = require('express');
 
 // need to understand what they do
-// const bodyParser = require('body-parser');
-// const methodOverride = require('method-override');
+const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
 // const logger = require('morgan');
 // const errorHandler = require('errorhandler'); to handle errors
 
@@ -14,14 +14,15 @@ const port = 3000;
 
 // need to understand what they do
 // app.use(logger('dev'));
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({extended:false}));
-// app.use(methodOverride());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(methodOverride());
 // app.use(errorHandler());
 app.use(express.static(path.join(__dirname, 'public')));
 
 const Prismic = require('@prismicio/client');
 const PrismicDOM = require('prismic-dom');
+const UAParser = require('ua-parser-js')
 
 const initApi = req => {
     return Prismic.getApi(process.env.PRISMIC_ENDPOINT, {
@@ -95,13 +96,6 @@ app.get('/about', async (req, res) => {
     const defaults = await handleRequest(api);
     const about = await api.getSingle('about');
 
-    // console.log(about.data.body)
-
-    const body = about.data.body;
-
-    body.forEach(data => {
-        console.log(data.primary.description)
-    })
     res.render('pages/about', {
         ...defaults,
         about
