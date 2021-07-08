@@ -9,8 +9,8 @@ block content
       section.about__gallery 
         .about___gallery__wrapper 
           each media in about.data.gallery
-            figure.about__gallery__media  
-              img.about__gallery__media__image(alt=media.image.alt src=media.image.url)
+              figure.about__gallery__media  
+                img.about__gallery__media__image(alt=media.image.alt src=media.image.url)
 
       each section in about.data.body 
         if section.slice_type == 'title'
