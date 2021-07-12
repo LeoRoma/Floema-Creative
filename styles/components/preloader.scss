@@ -4,9 +4,9 @@
 
   background: $color-contessa;
   color: $color-quarter-spanish-white;
-  display: none;
+  // display: none;
   text-align: center;
-  // z-index: map-get($z-index, preloader);
+  z-index: map-get($z-index, preloader);
 } 
 
 .preloader__text{
