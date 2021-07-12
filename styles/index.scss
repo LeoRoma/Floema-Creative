@@ -10,7 +10,7 @@
 // The files in shared folder suppose to be here but they don't load before reset.scss 
 @import './shared/descriptions.scss';
 @import './shared/titles.scss';
-
+@import './shared/vertical-titles.scss';
 
 @import './base/font.scss';
 @import './base/base.scss';

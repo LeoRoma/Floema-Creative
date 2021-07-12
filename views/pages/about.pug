@@ -23,7 +23,7 @@ block content
                 p.about__content__label=section.primary.label
 
                   each text in section.primary.description
-                    p.about__content__description=text.text
+                    .about__content__description=text.text.replace(/<p>/g, '<p data-animation="paragraph">')
 
               figure.about__content__media 
                 img.about__content__media__image(alt=section.primary.image.alt src=section.primary.image.url)
