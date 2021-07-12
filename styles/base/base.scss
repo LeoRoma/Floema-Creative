@@ -6,17 +6,18 @@
 
 html{
   font-size: calc(100vw / 1920 * 10); // viewport divided by the design's screen size
-  line-height: 1
+  line-height: 1;
+
+  
+  @include media('<phone') {
+    font-size: calc(100vw / 750 * 10);
+  }
 }
 
 body{
   @extend %description-16;
 
   font-family: $font-suisse-bp;
-
-  @include media('<phone') {
-    font-size: 100px;
-  }
 }
 
 a{
