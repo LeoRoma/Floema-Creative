@@ -20,7 +20,7 @@ block content
           section.about__content(class=`${section.primary.type === 'Left' ? 'about__content--left' : 'about__content--right'}`)
             .about__content_wrapper 
               .about__content__box
-                p.about__content__label=section.primary.label
+                p.about__content__label!=section.primary.label
 
                   each text in section.primary.description
                     .about__content__description=text.text.replace(/<p>/g, '<p data-animation="paragraph">')
