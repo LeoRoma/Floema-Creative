@@ -1,5 +1,30 @@
 .home {
+  @extend %cover;
+  @extend %center;
 
+  background: $color-contessa;
+  color: $color-quarter-spanish-white;
+  text-align: center;
+
+  &:before,
+  &:after{
+    content: ''; // without this line, the section will not to be rendered
+    height: 24rem;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+  }
+
+  &:before{
+    background: linear-gradient(to bottom, $color-contessa 0%, rgba($color-contessa, 0) 100%);
+    top: 0;
+  }
+
+  &:after{
+    background: linear-gradient(to top, $color-contessa 0%, rgba($color-contessa, 0) 100%);
+    bottom: 0;
+  }
 }
 
 .home__wrapper {
@@ -19,13 +44,32 @@
 }
 
 .home__gallery {
+  @extend %cover;
 
+  // visibility: hidden;
+}
+
+.home__gallery__media{
+  position: absolute;
 }
 
 .home__gallery__media__image {
 
 }
 
-.home_link {
+.home__link {
+  @extend %description-14;
 
+  align-items: center;
+  bottom: 5rem;
+  display: flex;
+  height: 6rem;
+  left: 50%;
+  letter-spacing: 0.05rem;
+  position: absolute;
+  width: 28.8rem;
+  justify-content: center;
+  text-transform: uppercase;
+  transform: translateX(-50%);
+  z-index: 2;
 }
