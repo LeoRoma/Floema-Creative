@@ -39,12 +39,12 @@
 
   width: 18rem;
   text-transform: uppercase;
-  // border: black solid;
 }
 
 .about__content__description {
   width: 36.2rem;
-  border: red solid;
+  white-space: pre-wrap;
+  
   p:not(:first-child){
     margin-top: 2.5rem;
   }
