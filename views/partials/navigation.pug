@@ -1,12 +1,9 @@
 nav.navigation 
-  .navigation__wrapper 
-    a.navigation__link(href="/")=meta.data.title
-      svg.navigation__link__icon
+  a.navigation__link(href="/")=meta.data.title
+    svg.navigation__link__icon=Floema
+    //-  if using a SVG: path(fill="currentColor" d="etc etc")
 
-    ul.navigation__list 
-      each item in navigation.data.list
-        li.navigation__list__item 
-          a.navigation__list_link(href=Link(item.link))=item.text
-
-      //- li.navigation__list__item 
-      //-   a.navigation__list_link(href="/collections") Collections
+  ul.navigation__list 
+    each item in navigation.data.list
+      li.navigation__list__item 
+        a.navigation__list_link(href=Link(item.link))=item.text

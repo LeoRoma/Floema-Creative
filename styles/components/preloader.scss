@@ -4,9 +4,10 @@
 
   background: $color-contessa;
   color: $color-quarter-spanish-white;
-  display: none;
+  display: flex;
   text-align: center;
-}
+  z-index: map-get($z-index, preloader);
+} 
 
 .preloader__text{
   @extend %title-53;

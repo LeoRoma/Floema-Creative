@@ -9,7 +9,8 @@ $font-suisse-bp: 'Suisse BP';
 
 $ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
 
-$z-indexes: (
-  'navigation',
-  'content'
+$z-index: (
+  preloader: 3,
+  navigation: 2,
+  content: 1
 );
