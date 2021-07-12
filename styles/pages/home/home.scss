@@ -7,15 +7,15 @@
 }
 
 .home__titles {
-
+  @extend %vertical-titles;
 }
 
 .home__titles__label {
-
+  @extend %vertical-titles__label;
 }
 
 .home__titles__title {
-
+  @extend %vertical-titles__title;
 }
 
 .home__gallery {
