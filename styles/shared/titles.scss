@@ -1,16 +1,10 @@
 %title-20{
   font-family: font-george-x;
   font-size: 2rem;
-}
 
-%title-53{
-  font-family: font-george-x;
-  font-size: 5.3rem;
-}
-
-%title-20{
-  font-family: $font-george-x;
-  font-size: 2rem;
+  @include media('<phone'){
+    font-size: 4.8rem;
+  }
 }
 
 %title-30{
