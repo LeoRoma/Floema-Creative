@@ -4,7 +4,7 @@
 
   background: $color-contessa;
   color: $color-quarter-spanish-white;
-  // display: none;
+  display: none;
   text-align: center;
   z-index: map-get($z-index, preloader);
 } 
@@ -23,4 +23,8 @@
   bottom: 7.3rem;
   left: 50%;
   transform: translate(-50%); 
+
+  @include media('<phone'){
+    font-size: 2.4rem;
+  }
 }
