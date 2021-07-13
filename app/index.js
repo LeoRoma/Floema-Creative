@@ -25,6 +25,8 @@ class App{
 
     // create a routing with AJAX and gives single page app behaviour
     this.page = this.pages[this.template];
+    this.page.create();
+
     console.log(this.page);
   }
 }
