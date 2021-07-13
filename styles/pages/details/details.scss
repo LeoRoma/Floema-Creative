@@ -136,10 +136,6 @@
 
   display: inline-block;
   margin-top: 3rem;
-  
-  @include media('<phone'){
-    // padding-left: 0;
-  }
 }
 
 .detail__button{

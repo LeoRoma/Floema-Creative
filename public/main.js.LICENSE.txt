@@ -14,8 +14,6 @@
 
 /*! ./html5-entities */
 
-/*! ./images/alpilles.jpg */
-
 /*! ./log */
 
 /*! ./node_modules/webpack-dev-server/client/clients/SockJSClient.js */
@@ -62,17 +60,9 @@
 
 /*! webpack/hot/emitter */
 
-/*!**********************!*\
-  !*** ./app/index.js ***!
-  \**********************/
-
 /*!***************************!*\
   !*** ./styles/index.scss ***!
   \***************************/
-
-/*!*********************************!*\
-  !*** ./app/images/alpilles.jpg ***!
-  \*********************************/
 
 /*!*********************************!*\
   !*** ./node_modules/url/url.js ***!
