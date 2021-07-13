@@ -1,3 +1,3 @@
-class Collections{
-  
+export default class Collections{
+
 }

@@ -1,3 +1,3 @@
-class About{
-  
+export default class About{
+
 }
