@@ -8,8 +8,16 @@ export default class Home extends Page{
       element: '.home',
       elements: {
         navigation: document.querySelector('.navigation'),
-        button: '.home__button'
+        link: '.home__link'
       }
+    })
+  }
+
+  create(){
+    super.create();
+
+    this.elements.link.addEventListener('click', () => {
+      console.log('Hi, you have clicked')
     })
   }
 }

@@ -31,8 +31,11 @@ export default class Page {
           this.elements[key] = this.element.querySelector(entry);
         }
       }
-      console.log(this.elements[key], entry)
     })
+  }
+
+  addEventListeners(){
+
   }
 }
 
