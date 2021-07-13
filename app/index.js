@@ -5,11 +5,19 @@ import Collections from './pages/Collections/index';
 import Detail from './pages/Detail/index';
 import Home from './pages/Home/index';
 
+import Preloader from './components/Preloader';
+
 class App {
   constructor() {
+    this.createPreloader();
     this.createContent();
     this.createPages();
     this.addLinkListeners();
+  }
+
+  createPreloader(){
+    this.preloader = new Preloader();
+    this.preloader.once('completed', this.onPreloaded)
   }
 
   // get content and template from different pages
@@ -33,6 +41,10 @@ class App {
     // this.page.hide();
   }
 
+  onPreloaded(){
+    console.log('Preloaded');
+  }
+
   async onChange(url) {
     await this.page.hide();
     const request = await window.fetch(url);
@@ -53,7 +65,7 @@ class App {
       this.page = this.pages[this.template];
       this.page.create();
       this.page.show();
-      
+
       this.addLinkListeners();
     }else{
       console.log("Error!");
