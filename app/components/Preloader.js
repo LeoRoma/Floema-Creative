@@ -12,13 +12,22 @@ export default class Preloader extends Component{
       elements: {
         title: '.preloader__text',
         number: '.preloader__number',
+        numberText: '.preloader__number__text',
         images: document.querySelectorAll('img')
       }
     })
 
-    this.elements.titleSpans = split({
-      element: this.elements.title
+    split({
+      element: this.elements.title,
+      expression: '<br>'
     })
+
+    split({
+      element: this.elements.title,
+      expression: '<br>'
+    })
+
+    this.elements.titleSpans = this.elements.title.querySelectorAll('span span');
 
     this.length = 0;
 
@@ -38,9 +47,8 @@ export default class Preloader extends Component{
     this.length += 1;
 
     const percentage = this.length / this.elements.images.length;
-    console.log(Math.round(this.length / this.elements.images.length * 100));
 
-    this.elements.number.innerHTML = `${Math.round(percentage * 100)}%`;
+    this.elements.numberText.innerHTML = `${Math.round(percentage * 100)}%`;
 
     if(percentage === 1){
       this.onLoaded();
@@ -53,9 +61,26 @@ export default class Preloader extends Component{
         delay: 2
       });
 
-      this.animateOut.to(this.element, {
-        autoAlpha: 0
+      this.animateOut.to(this.elements.titleSpans, {
+        duration: 1.5,
+        ease: 'expo.out',
+        stagger: 0.1,
+        y: '100%'
       })
+
+      this.animateOut.to(this.elements.numberText, {
+        duration: 1.5,
+        ease: 'expo.out',
+        stagger: 0.1,
+        y: '100%'
+      }, '-=1,4')
+
+      this.animateOut.to(this.element, {
+        duration: 1.5,
+        ease: 'expo.out',
+        scaleY: 0,
+        transformOrigin: '100% 100%'
+      }, '-=1')
 
       this.animateOut.call(() => {
         this.emit('completed');

@@ -37,12 +37,12 @@ class App {
     // create a routing with AJAX and gives single page app behaviour
     this.page = this.pages[this.template];
     this.page.create();
-    this.page.show();
-    // this.page.hide();
   }
 
   onPreloaded(){
     this.preloader.destroy();
+
+    this.page.show();
   }
 
   async onChange(url) {
