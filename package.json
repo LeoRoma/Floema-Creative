@@ -33,6 +33,7 @@
     "eslint-plugin-standard": "^5.0.0",
     "file-loader": "^6.2.0",
     "glslify-loader": "^2.0.0",
+    "gsap": "^3.7.0",
     "image-minimizer-webpack-plugin": "^2.2.0",
     "imagemin": "^8.0.0",
     "imagemin-gifsicle": "^7.0.0",

@@ -1,3 +1,5 @@
+import GSAP from 'gsap';
+
 import each from 'lodash/each';
 
 export default class Page {
@@ -34,8 +36,17 @@ export default class Page {
     })
   }
 
-  addEventListeners(){
+  show(){
+    GSAP.from(this.element, {
+      autoAlpha: 0,
+      delay: 5
+    });
+  }
 
+  hide(){
+    GSAP.to(this.element, {
+      autoAlpha: 0
+    });
   }
 }
 
