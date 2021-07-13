@@ -5,7 +5,11 @@ export default class Home extends Page{
     super({
       id: 'home',
 
-      element: '.home'
+      element: '.home',
+      elements: {
+        navigation: document.querySelector('.navigation'),
+        button: '.home__button'
+      }
     })
   }
 }
