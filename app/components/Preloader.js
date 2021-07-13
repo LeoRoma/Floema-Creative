@@ -1,6 +1,8 @@
 import GSAP from 'gsap';
 import each from 'lodash/each';
 
+import { split } from '../utils/text';
+
 import Component from '../classes/Component';
 
 export default class Preloader extends Component{
@@ -12,6 +14,10 @@ export default class Preloader extends Component{
         number: '.preloader__number',
         images: document.querySelectorAll('img')
       }
+    })
+
+    this.elements.titleSpans = split({
+      element: this.elements.title
     })
 
     this.length = 0;
