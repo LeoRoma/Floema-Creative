@@ -53,6 +53,8 @@ class App {
       this.page = this.pages[this.template];
       this.page.create();
       this.page.show();
+      
+      this.addLinkListeners();
     }else{
       console.log("Error!");
     }
