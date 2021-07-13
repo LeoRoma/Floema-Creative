@@ -5,15 +5,15 @@ const express = require('express');
 // need to understand what they do
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
-// const logger = require('morgan');
-// const errorHandler = require('errorhandler'); to handle errors
+const logger = require('morgan');
+// const errorHandler = require('errorhandler'); 
 
 const app = express();
 const path = require('path');
 const port = 3000;
 
 // need to understand what they do
-// app.use(logger('dev'));
+app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(methodOverride());
