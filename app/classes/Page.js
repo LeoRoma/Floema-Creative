@@ -18,14 +18,6 @@ export default class Page {
     this.transformPrefix = Prefix('transform');
 
     this.onMouseWheelEvent = this.onMouseWheel.bind(this);
-
-    console.log(this.transformPrefix);
-
-    this.scroll = {
-      current: 0,
-      target: 0,
-      last: 0
-    };
   }
 
   create() {
@@ -35,7 +27,8 @@ export default class Page {
     this.scroll = {
       current: 0,
       target: 0,
-      last: 0
+      last: 0,
+      limit: 0
     };
 
     // CheatSheet
@@ -86,13 +79,24 @@ export default class Page {
 
   onMouseWheel(event){
     const {deltaY} = event;
-    
+
     this.scroll.target += deltaY;
+  }
+
+  onResize () {
+    this.scroll.limit = this.elements.wrapper.clientHeight - window.innerHeight;
   }
 
   update(){
     //GSAP.interpolate() => lerp
+    this.scroll.target = GSAP.utils.clamp(0.1, this.scroll.limit, this.scroll.target);
+
     this.scroll.current = GSAP.utils.interpolate(this.scroll.current, this.scroll.target, 0.1);
+
+    if(this.scroll.current < 0.01){
+      this.scroll.current = 0;
+    }
+    // console.log(this.scroll.current);
 
     if(this.elements.wrapper){
       this.elements.wrapper.style[this.transformPrefix] = `translateY(-${this.scroll.current}px)`;
