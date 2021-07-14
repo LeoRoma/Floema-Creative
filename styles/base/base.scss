@@ -5,9 +5,11 @@
 }
 
 html{
+  @extend %cover;
+
   font-size: calc(100vw / 1920 * 10); // viewport divided by the design's screen size
   line-height: 1;
-
+  overflow: hidden;
   
   @include media('<phone') {
     font-size: calc(100vw / 750 * 10);
@@ -15,8 +17,9 @@ html{
 }
 
 body{
+  @extend %cover;
   @extend %description-16;
-
+  
   font-family: $font-suisse-bp;
 }
 
@@ -38,4 +41,7 @@ img{
   vertical-align: middle;
 }
 
+.content{
+  @extend %cover;
+}
 // part of the boiler plater
