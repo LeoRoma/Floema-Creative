@@ -5,7 +5,7 @@ import Prefix from 'prefix';
 import each from 'lodash/each';
 import map from 'lodash/map';
 
-import Title from '../animation/Title';
+import Title from '../animations/Title';
 
 export default class Page {
   constructor({ 
