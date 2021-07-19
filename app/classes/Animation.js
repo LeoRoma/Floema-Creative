@@ -15,7 +15,7 @@ export default class Animation extends Component {
 
   createObserver() {
     this.observer = new window.IntersectionObserver(entries => {
-      entries.forEact(entry => {
+      entries.forEach(entry => {
         if (entry.isIntersecting) {
           console.log('animatein');
           this.animateIn();
