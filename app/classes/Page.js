@@ -84,19 +84,20 @@ export default class Page {
   }
 
   onResize () {
-    this.scroll.limit = this.elements.wrapper.clientHeight - window.innerHeight;
+    if(this.elements.wrapper){
+      this.scroll.limit = this.elements.wrapper.clientHeight - window.innerHeight;
+    }
   }
 
   update(){
-    //GSAP.interpolate() => lerp
     this.scroll.target = GSAP.utils.clamp(0.1, this.scroll.limit, this.scroll.target);
 
+    //GSAP.interpolate() => lerp
     this.scroll.current = GSAP.utils.interpolate(this.scroll.current, this.scroll.target, 0.1);
 
     if(this.scroll.current < 0.01){
       this.scroll.current = 0;
     }
-    // console.log(this.scroll.current);
 
     if(this.elements.wrapper){
       this.elements.wrapper.style[this.transformPrefix] = `translateY(-${this.scroll.current}px)`;
