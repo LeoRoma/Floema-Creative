@@ -87,7 +87,7 @@ class App {
   }
 
   onResize(){
-    if(this.page && this.page.update){
+    if(this.page && this.page.onResize){
       this.page.onResize();
     }
   }

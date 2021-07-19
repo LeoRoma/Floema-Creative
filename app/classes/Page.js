@@ -3,7 +3,7 @@ import NormalizeWheel from 'normalize-wheel';
 import Prefix from 'prefix';
 
 import each from 'lodash/each';
-import map from 'lodash/each';
+import map from 'lodash/map';
 
 import Title from '../animation/Title';
 
@@ -55,13 +55,11 @@ export default class Page {
   }
 
   createAnimations(){
-    console.log(this.elements.animationsTitle);
-    this.animationsTitles = map(this.elements.animationsTitles, element =>{
+    this.animationsTitles = map(this.elements.animationsTitles, element => {
       return new Title({
         element
       })
     })
-    console.log(this.animationsTitle);
   }
 
   show(){
@@ -105,6 +103,8 @@ export default class Page {
     if(this.elements.wrapper){
       this.scroll.limit = this.elements.wrapper.clientHeight - window.innerHeight;
     }
+
+    each(this.animationsTitles, (animation) => animation.onResize())
   }
 
   update(){
