@@ -1,4 +1,6 @@
-export default class Animation {
+import Component from './Component';
+
+export default class Animation extends Component {
   constructor(element) {
     this.element = element;
 
