@@ -4,6 +4,8 @@ import Prefix from 'prefix';
 
 import each from 'lodash/each';
 
+import Title from '../animation/Title';
+
 export default class Page {
   constructor({ 
     element, 
