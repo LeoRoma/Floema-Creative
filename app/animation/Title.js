@@ -26,7 +26,10 @@ export default class Title extends Animation{
     },{
       delay: 0.5,
       duration: 1.5,
-      stagger: 0.1,
+      stagger: {
+        amount: 1,
+        axis: 'x'
+      },
       y: '0%'
     })
   }
