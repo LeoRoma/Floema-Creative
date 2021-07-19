@@ -4,7 +4,7 @@ import GSAP from 'gsap';
 
 import Animation from '../classes/Animation';
 
-export default class Paragraph extends Animation {
+export default class Label extends Animation {
   constructor({ element, elements }) {
     super({
       element,
