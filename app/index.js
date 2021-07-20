@@ -5,6 +5,7 @@ import Collections from './pages/Collections/index';
 import Detail from './pages/Detail/index';
 import Home from './pages/Home/index';
 
+import Navigation from './components/Navigation';
 import Preloader from './components/Preloader';
 
 class App {
@@ -18,6 +19,10 @@ class App {
     this.addLinkListeners();
   
     this.update();
+  }
+
+  createNavigations(){
+    this.navigation = new Navigation(); 
   }
 
   createPreloader(){
@@ -69,6 +74,8 @@ class App {
       const divContent = div.querySelector('.content');
 
       this.template = divContent.getAttribute('data-template');
+
+      this.navigation.onChange(this.template);
 
       this.content.setAttribute('data-template', this.template);
       this.content.innerHTML = divContent.innerHTML;
