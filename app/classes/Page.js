@@ -5,6 +5,8 @@ import Prefix from 'prefix';
 import each from 'lodash/each';
 import map from 'lodash/map';
 
+import AsyncLoad from './AsyncLoad';
+
 import Highlight from '../animations/Highlight';
 import Label from '../animations/Label';
 import Paragraph from '../animations/Paragraph';
@@ -25,8 +27,9 @@ export default class Page {
       animationsHighlights: '[data-animation="highlight"]',
       animationsLabels: '[data-animation="label"]',
       animationsParagraphs: '[data-animation="paragraph"]',
-      animationsTitles: '[data-animation="title"]'
+      animationsTitles: '[data-animation="title"]',
 
+      preloaders: '[data-src]'
     };
 
     this.id = id;
@@ -62,6 +65,7 @@ export default class Page {
     })
 
     this.createAnimations();
+    this.createPreloader();
   }
 
   createAnimations() {
@@ -98,6 +102,12 @@ export default class Page {
     });
 
     this.animations.push(...this.animationsLabels);
+  }
+
+  createPreloader(){
+    this.preloaders = map(this.elements.preloaders, element => {
+      return new AsyncLoad({element});
+    })
   }
 
   show() {

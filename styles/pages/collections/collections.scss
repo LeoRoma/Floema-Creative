@@ -90,8 +90,12 @@
 
 .collections__mobile{
   bottom: 5rem;
-  display: flex;
+  display: none;
   position: absolute;
+
+  @include media('<phone'){
+    display: flex;
+  }
 }
 
 .collections__mobile__item{

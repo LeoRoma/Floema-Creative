@@ -8,12 +8,9 @@
 }
 
 .navigation__link {
-  @extend %link--hidden;
-
   font-size: 0;
-  height: 2rem;
+  height: 4rem;
   left: 4rem;
-  line-height: 1.2rem;
   pointer-events: auto;
   position: absolute;
   top: 4rem;
