@@ -1,7 +1,11 @@
+import GSAP from 'gsap';
+
 import Component from '../classes/Component';
 
-export default class Navigation extends Component{
-  constructor({template}){
+import { COLOR_QUARTER_SPANISH_WHITE, COLOR_BRIGHT_GRAY } from '../utils/colors';
+
+export default class Navigation extends Component {
+  constructor({ template }) {
     super({
       element: '.navigation',
       elements: {
@@ -13,7 +17,10 @@ export default class Navigation extends Component{
     this.onChange(template);
   }
 
-  onChange(template){
-    console.log(template)
+  onChange(template) {
+    GSAP.to(this.element, {
+      color: template === 'about' ? COLOR_BRIGHT_GRAY : COLOR_QUARTER_SPANISH_WHITE,
+      duration: 1.5
+    })
   }
 }
