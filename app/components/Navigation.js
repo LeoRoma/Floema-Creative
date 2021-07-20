@@ -1,17 +1,19 @@
 import Component from '../classes/Component';
 
 export default class Navigation extends Component{
-  constructor(){
+  constructor({template}){
     super({
-      element: '.naviation',
+      element: '.navigation',
       elements: {
         items: '.navigation__list__item',
         links: '.navigation__list__link'
       }
-    })
+    });
+
+    this.onChange(template);
   }
 
-  onChange(){
-    
+  onChange(template){
+    console.log(template)
   }
 }

@@ -10,8 +10,10 @@ import Preloader from './components/Preloader';
 
 class App {
   constructor() {
-    this.createPreloader();
     this.createContent();
+
+    this.createPreloader();
+    this.createNavigation();
     this.createPages();
 
     this.addEventListeners();
@@ -21,8 +23,10 @@ class App {
     this.update();
   }
 
-  createNavigations(){
-    this.navigation = new Navigation(); 
+  createNavigation(){
+    this.navigation = new Navigation({
+      template: this.template
+    }); 
   }
 
   createPreloader(){
