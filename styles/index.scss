@@ -1,32 +1,33 @@
-@import'./base/reset.scss';
+@import './base/reset';
 
-@import './utils/variables.scss';
-@import './utils/functions.scss';
-@import './utils/mixins.scss';
-@import './utils/vendors.scss';
-@import './utils/responsive.scss';
+@import './utils/variables';
+// @import './utils/functions';
+@import './utils/mixins';
+@import './utils/vendors';
+@import './utils/responsive';
 
-@import './shared/descriptions.scss';
-@import './shared/pages.scss';
-@import './shared/titles.scss';
-@import './shared/vertical-titles.scss';
+@import './shared/descriptions';
+@import './shared/links';
+@import './shared/pages';
+@import './shared/titles';
+@import './shared/vertical-titles';
 
-@import './base/font.scss';
-@import './base/base.scss';
+@import './base/fonts';
+@import './base/base';
 
-@import './components/preloader.scss';
+@import './components/preloader';
 
-@import './layout/navigation.scss';
+@import './layout/navigation';
 
-@import './pages/about/about.scss';
-@import './pages/about/content.scss';
-@import './pages/about/gallery.scss';
-@import './pages/about/highlight.scss';
+@import './pages/about/about';
+@import './pages/about/content';
+@import './pages/about/gallery';
+@import './pages/about/highlight';
 
-@import './pages/collections/collections.scss';
+@import './pages/collections/collections';
 
-@import './pages/details/details.scss';
+@import './pages/details/details';
 
-@import './pages/home/home.scss';
+@import './pages/home/home';
 
 // Check sass-guidelin.es/#architecture for convention to how to structure your folders and files
