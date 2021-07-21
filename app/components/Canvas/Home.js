@@ -77,10 +77,8 @@ export default class Home {
     const xDistance = x.start - x.end;
     const yDistance = y.start - y.end;
 
-    this.x.target = this.scrollCurrent.x + xDistance;
-    this.y.target = this.scrollCurrent.y + yDistance;
-
-    console.log(this.x.target, this.y.target);
+    this.x.target = this.scrollCurrent.x - xDistance;
+    this.y.target = this.scrollCurrent.y - yDistance;
   }
 
   onTouchUp({ x, y }) {
@@ -94,8 +92,6 @@ export default class Home {
   update() {
     this.x.current = GSAP.utils.interpolate(this.x.current, this.x.target, this.x.lerp);
     this.y.current = GSAP.utils.interpolate(this.y.current, this.y.target, this.y.lerp);
-
-    // console.log(this.x.current, this.y.current);
 
     this.scroll.x = this.x.current;
     this.scroll.y = this.y.current;
