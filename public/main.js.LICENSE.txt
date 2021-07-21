@@ -18,6 +18,8 @@
  * @author: Jack Doyle, jack@greensock.com
 */
 
+/*! ../../classes/Button */
+
 /*! ../../classes/Page */
 
 /*! ../animations/Highlight */
@@ -403,6 +405,10 @@
 /*!*****************************!*\
   !*** ./app/utils/colors.js ***!
   \*****************************/
+
+/*!*******************************!*\
+  !*** ./app/classes/Button.js ***!
+  \*******************************/
 
 /*!*******************************!*\
   !*** ./app/classes/Colors.js ***!
