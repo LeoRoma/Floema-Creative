@@ -118,6 +118,10 @@ class App {
   */
   // In WebGL, when the camera moves need to keep the new rendering position over and over => that is why we use requestAnimationFrame
   update() {
+    if (this.canvas && this.canvas.update) {
+      this.canvas.update();
+    }
+
     if (this.page && this.page.update) {
       this.page.update();
     }
