@@ -5,6 +5,7 @@ import Collections from './pages/Collections/index';
 import Detail from './pages/Detail/index';
 import Home from './pages/Home/index';
 
+import Canvas from './components/Canvas/Index';
 import Navigation from './components/Navigation';
 import Preloader from './components/Preloader';
 
@@ -14,24 +15,29 @@ class App {
 
     this.createPreloader();
     this.createNavigation();
+    this.createCanvas();
     this.createPages();
 
     this.addEventListeners();
 
     this.addLinkListeners();
-  
+
     this.update();
   }
 
-  createNavigation(){
+  createNavigation() {
     this.navigation = new Navigation({
       template: this.template
-    }); 
+    });
   }
 
-  createPreloader(){
+  createPreloader() {
     this.preloader = new Preloader();
     this.preloader.once('completed', this.onPreloaded.bind(this));
+  }
+
+  createCanvas() {
+    this.canvas = new Canvas();
   }
 
   // get content and template from different pages
@@ -57,7 +63,7 @@ class App {
   Events
   */
 
-  onPreloaded(){
+  onPreloaded() {
     this.preloader.destroy();
 
     this.onResize();
@@ -69,7 +75,7 @@ class App {
     await this.page.hide();
     const request = await window.fetch(url);
 
-    if (request.status === 200){
+    if (request.status === 200) {
       const html = await request.text();
       const div = document.createElement('div');
 
@@ -92,23 +98,23 @@ class App {
       this.page.show();
 
       this.addLinkListeners();
-    }else{
+    } else {
       console.log("Error!");
     }
   }
 
-  onResize(){
-    if(this.page && this.page.onResize){
+  onResize() {
+    if (this.page && this.page.onResize) {
       this.page.onResize();
     }
   }
 
   /*
   Loop
-  */ 
+  */
   // In WebGL, when the camera moves need to keep the new rendering position over and over => that is why we use requestAnimationFrame
-  update(){
-    if(this.page && this.page.update){
+  update() {
+    if (this.page && this.page.update) {
       this.page.update();
     }
     this.frame = window.requestAnimationFrame(this.update.bind(this));
@@ -116,8 +122,8 @@ class App {
 
   /*
   Listeners
-  */ 
-  addEventListeners(){
+  */
+  addEventListeners() {
     window.addEventListener('resize', this.onResize.bind(this));
   }
 
