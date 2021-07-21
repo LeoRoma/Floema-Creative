@@ -19,7 +19,6 @@ export default class Media{
 
   createTexture(){
     this.texture = new Texture(this.gl);
-    console.log(this.element);
 
     this.image = new window.Image();
     this.image.crossOrigin = 'anonymous' // To set the image for cross origin;
