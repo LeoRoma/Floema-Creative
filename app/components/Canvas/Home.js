@@ -7,6 +7,7 @@ import Media from './Media';
 export default class Home {
   constructor({ gl, scene, sizes }) {
     this.gl = gl;
+    // this.scene = scene;
     this.sizes = sizes;
 
     this.group = new Transform();
