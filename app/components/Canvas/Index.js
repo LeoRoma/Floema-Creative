@@ -26,7 +26,9 @@ export default class Canvas {
   }
 
   createRenderer() {
-    this.renderer = new Renderer();
+    this.renderer = new Renderer({
+      alpha: true
+    });
 
     this.gl = this.renderer.gl;
 
