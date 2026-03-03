@@ -5,8 +5,8 @@
   "scripts": {
     "backend:build": "node app.js",
     "backend:development": "nodemon app.js",
-    "frontend:build": "webpack --progress --config webpack.config.build.js",
-    "frontend:development": "webpack serve --progress --config webpack.config.development.js",
+    "frontend:build": "cross-env NODE_OPTIONS=--openssl-legacy-provider webpack --progress --config webpack.config.build.js",
+    "frontend:development": "cross-env NODE_OPTIONS=--openssl-legacy-provider webpack serve --progress --config webpack.config.development.js",
     "start": "concurrently --kill-others \"npm run backend:development\" \"npm run frontend:development\""
   },
   "repository": {
@@ -24,6 +24,7 @@
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "copy-webpack-plugin": "^9.0.0",
+    "cross-env": "^10.1.0",
     "css-loader": "^5.2.6",
     "eslint": "^7.27.0",
     "eslint-config-standard": "^16.0.3",
