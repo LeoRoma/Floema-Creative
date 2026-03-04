@@ -7,7 +7,7 @@ block content
   .detail(data-background="#BC978C" data-color="#F9F1E7")  
     .detail__wrapper 
       figure.detail__media
-        img.detail__media__image(alt=product.data.image data-src=product.data.image.url)
+        img.detail__media__image(alt=product.data.item.alt data-src=product.data.item.url)
 
       .detail__information
         p.detail__information__collection=product.data.collection.data.title
@@ -19,7 +19,7 @@ block content
             each highlight in product.data.highlights
               p.detail__information__highlight
                 svg.detail__information__highlight__icon
-                  use(xlink:href=`sprite-${highlight.highlights_icon.toLowerCase()}`)
+                  use(xlink:href=`sprite-${highlight.highlights_icons.toLowerCase()}`)
 
                 //- for having text inside a paragraph can use the concatenator syntax with #
                 //- | #{highlight.highlights_text} 
