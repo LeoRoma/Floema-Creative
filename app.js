@@ -1,3 +1,6 @@
+/* eslint-disable comma-dangle */
+/* eslint-disable semi */
+/* eslint-disable quotes */
 require("dotenv").config();
 
 const express = require("express");
@@ -55,13 +58,13 @@ app.use((req, res, next) => {
   res.locals.PrismicDOM = PrismicDOM; // access to the prismic dome for the frontend
 
   res.locals.Numbers = (index) => {
-    return index == 0
+    return index === 0
       ? "One"
-      : index == 1
+      : index === 1
         ? "Two"
-        : index == 2
+        : index === 2
           ? "Three"
-          : index == 3
+          : index === 3
             ? "Four"
             : "";
   };
@@ -105,7 +108,8 @@ app.get("/about", async (req, res) => {
   const api = await initApi(req);
   const defaults = await handleRequest(api);
   const about = await api.getSingle("about");
-
+  console.log("about", about);
+  about.data.body.map((data) => console.log(data));
   res.render("pages/about", {
     ...defaults,
     about,
@@ -116,14 +120,16 @@ app.get("/collections", async (req, res) => {
   const api = await initApi(req);
   const defaults = await handleRequest(api);
   const home = await api.getSingle("home");
-
   const { results: collections } = await api.query(
     Prismic.Predicates.at("document.type", "collection"),
     {
       fetchLinks: "product.image",
     },
   );
-
+  console.log("collections >>>>", collections);
+  collections.forEach((collection) => {
+    console.log(collection.data.products);
+  });
   res.render("pages/collections", {
     ...defaults,
     collections,
@@ -138,7 +144,7 @@ app.get("/detail/:uid", async (req, res) => {
   const product = await api.getByUID("product", req.params.uid, {
     fetchLinks: "collection.title",
   });
-
+  console.log("product", product);
   res.render("pages/detail", {
     ...defaults,
     product,
