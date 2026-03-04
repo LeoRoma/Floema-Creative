@@ -41,11 +41,11 @@ block content
                   figure.about__highlight__media 
                     img.about__highlight__media__image(alt=media.image.alt data-src=media.image.url)
 
-        if section.slice_type == 'gallery'
+        if section.slice_type == 'posters'
           section.about__gallery 
             .about__gallery__wrapper
               each media in section.items
                 figure.about__gallery__media 
-                  img.about__gallery__media__image(alt=media.image.alt data-src=media.image.url)
+                  img.about__gallery__media__image(alt=media.poster.alt data-src=media.poster.url)
 
     //- .about__content__description=PrismicDOM.RichText.asHtml(section.primary.description)
