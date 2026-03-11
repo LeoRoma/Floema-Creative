@@ -1,23 +1,23 @@
-.about {
-  @extend %page;
-  
-    // background: $color-cadet-blue;
-    // color: $color-bright-gray;
-    // opacity: 0;
-}  
+// .about {
+//   @extend %page;
 
-.about__wrapper {
+//     // background: $color-cadet-blue;
+//     // color: $color-bright-gray;
+//     // opacity: 0;
+// }
 
-}
+// .about__wrapper {
 
-.about__title {
-  @extend %title-100;
+// }
 
-  margin: auto;
-  max-width: 126rem;
-  text-align: center;
+// .about__title {
+//   @extend %title-100;
 
-  @include media('<phone'){
-    max-width: 67.7rem;
-  }
-}
+//   margin: auto;
+//   max-width: 126rem;
+//   text-align: center;
+
+//   @include media('<phone'){
+//     max-width: 67.7rem;
+//   }
+// }

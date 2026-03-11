@@ -1,170 +1,170 @@
-.about__content {
-  display: flex;
-  justify-content: center;
-  margin: 20rem auto;
-  position: relative;
-  // width: 125.8rem;
+// .about__content {
+//   display: flex;
+//   justify-content: center;
+//   margin: 20rem auto;
+//   position: relative;
+//   // width: 125.8rem;
 
-  &:first-child{
-    margin-top: 0;
-  }
+//   &:first-child{
+//     margin-top: 0;
+//   }
 
-  &:last-child{
-    margin-bottom: 0;
-  }
+//   &:last-child{
+//     margin-bottom: 0;
+//   }
 
-  &:nth-child(5) {
-    justify-content: flex-end;
-  }
+//   &:nth-child(5) {
+//     justify-content: flex-end;
+//   }
 
-  &:nth-child(8) {
-    justify-content: flex-start;
-  }
+//   &:nth-child(8) {
+//     justify-content: flex-start;
+//   }
 
-  @include media('<phone'){   
-    &:nth-child(5) {
-      justify-content: flex-end;
-    }
+//   @include media('<phone'){
+//     &:nth-child(5) {
+//       justify-content: flex-end;
+//     }
 
-    &:nth-child(8) {
-      justify-content: flex-start;
-    }
-  }
-}
+//     &:nth-child(8) {
+//       justify-content: flex-start;
+//     }
+//   }
+// }
 
-.about__content_wrapper {
-  display: flex;
+// .about__content_wrapper {
+//   display: flex;
 
-  .about__content--right & {
-    flex-direction: row-reverse;
-  }
+//   .about__content--right & {
+//     flex-direction: row-reverse;
+//   }
 
-  @include media('<phone'){
-    .about__content:nth-child(3) & {
-      flex-direction: column-reverse;
-    }
+//   @include media('<phone'){
+//     .about__content:nth-child(3) & {
+//       flex-direction: column-reverse;
+//     }
 
-    .about__content:nth-child(5) & {
-      flex-direction: column;
-    }
+//     .about__content:nth-child(5) & {
+//       flex-direction: column;
+//     }
 
-    .about__content:nth-child(8) & {
-      flex-direction: column-reverse;
-    }
+//     .about__content:nth-child(8) & {
+//       flex-direction: column-reverse;
+//     }
 
-    .about__content:nth-child(9) & {
-      flex-direction: column-reverse;
-    }
-  }
-}
+//     .about__content:nth-child(9) & {
+//       flex-direction: column-reverse;
+//     }
+//   }
+// }
 
-.about__content__box{
-  display: flex;
+// .about__content__box{
+//   display: flex;
 
-  @include media('<phone'){
-    margin: auto;
-    width: 60.9rem;
- 
-    .about__content:nth-child(3) & {
-      margin-top: 10rem;
-    }
+//   @include media('<phone'){
+//     margin: auto;
+//     width: 60.9rem;
 
-    .about__content:nth-child(5) & {
-      margin-bottom: 10rem;
-    }
+//     .about__content:nth-child(3) & {
+//       margin-top: 10rem;
+//     }
 
-    .about__content:nth-child(8) & {
-      margin-top: 10rem;
-    }
+//     .about__content:nth-child(5) & {
+//       margin-bottom: 10rem;
+//     }
 
-    .about__content:nth-child(9) & {
-      margin-top: 10rem;
-    }
-  }
-}
+//     .about__content:nth-child(8) & {
+//       margin-top: 10rem;
+//     }
 
-.about__content__label {
-  @extend %description-12;
+//     .about__content:nth-child(9) & {
+//       margin-top: 10rem;
+//     }
+//   }
+// }
 
-  width: 18rem;
-  text-transform: uppercase;
+// .about__content__label {
+//   @extend %description-12;
 
-  @include media('<=phone'){
-    font-size: 2.4rem;
-    padding-right: 2.5rem;
-    width: 15rem;
-}
-}
+//   width: 18rem;
+//   text-transform: uppercase;
 
-.about__content__description {
-  width: 36.2rem;
-  white-space: pre-wrap;
-  
-  p:not(:first-child){
-    margin-top: 2.5rem;
-  }
+//   @include media('<=phone'){
+//     font-size: 2.4rem;
+//     padding-right: 2.5rem;
+//     width: 15rem;
+// }
+// }
 
-  @include media('<=phone'){
-      width: calc(100% - 15rem);
-  }
-}
+// .about__content__description {
+//   width: 36.2rem;
+//   white-space: pre-wrap;
 
-.about__content__media {
-  position: relative;
+//   p:not(:first-child){
+//     margin-top: 2.5rem;
+//   }
 
-  .about__content:nth-child(3) & {
-    height: 80.8rem;
-    margin-left: 17.8rem;
-    width: 53.8rem;
-  }
+//   @include media('<=phone'){
+//       width: calc(100% - 15rem);
+//   }
+// }
 
-  .about__content:nth-child(5) & {
-    height: 60rem;
-    margin-left: 18rem;
-    width: 96rem;
-  }
+// .about__content__media {
+//   position: relative;
 
-  .about__content:nth-child(8) & {
-    height: 52rem;
-    margin-right: 12rem;
-    width: 84.2rem;
-  }
+//   .about__content:nth-child(3) & {
+//     height: 80.8rem;
+//     margin-left: 17.8rem;
+//     width: 53.8rem;
+//   }
 
-  .about__content:nth-child(9) & {
-    height: 85.8rem;
-    margin-left: 22rem;
-    width: 60.8rem;
-  }
+//   .about__content:nth-child(5) & {
+//     height: 60rem;
+//     margin-left: 18rem;
+//     width: 96rem;
+//   }
 
-  @include media('<=phone'){
-    .about__content:nth-child(3) & {
-      height: 91.4rem;
-      margin-left: 0;
-      width: 60.9rem; 
-    }
+//   .about__content:nth-child(8) & {
+//     height: 52rem;
+//     margin-right: 12rem;
+//     width: 84.2rem;
+//   }
 
-    .about__content:nth-child(5) & {
-      height: 50rem;
-      margin-left: 0;
-      width: 100vw;
-    }
+//   .about__content:nth-child(9) & {
+//     height: 85.8rem;
+//     margin-left: 22rem;
+//     width: 60.8rem;
+//   }
 
-    .about__content:nth-child(8) & {
-      height: 52rem;
-      margin-right: 0;
-      width: 100vw;
-    }
+//   @include media('<=phone'){
+//     .about__content:nth-child(3) & {
+//       height: 91.4rem;
+//       margin-left: 0;
+//       width: 60.9rem;
+//     }
 
-    .about__content:nth-child(9) & {
-      height: 85.8rem;
-      margin-left: 0;
-      width: 60.8rem;
-    }
-  }
-}
+//     .about__content:nth-child(5) & {
+//       height: 50rem;
+//       margin-left: 0;
+//       width: 100vw;
+//     }
 
-.about__content__media__image {
-  @extend %cover;
+//     .about__content:nth-child(8) & {
+//       height: 52rem;
+//       margin-right: 0;
+//       width: 100vw;
+//     }
 
-  object-fit: cover;
-}
+//     .about__content:nth-child(9) & {
+//       height: 85.8rem;
+//       margin-left: 0;
+//       width: 60.8rem;
+//     }
+//   }
+// }
+
+// .about__content__media__image {
+//   @extend %cover;
+
+//   object-fit: cover;
+// }

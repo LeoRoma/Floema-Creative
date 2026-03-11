@@ -142,7 +142,7 @@ app.get("/detail/:uid", async (req, res) => {
   const product = await api.getByUID("product", req.params.uid, {
     fetchLinks: "collection.title",
   });
-  console.log("product>>>>>", product.data);
+  console.log("product>>>>>", product.data.item);
   res.render("pages/detail", {
     ...defaults,
     product,
