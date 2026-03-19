@@ -122,13 +122,10 @@ app.get("/collections", async (req, res) => {
   const { results: collections } = await api.query(
     Prismic.Predicates.at("document.type", "collection"),
     {
-      fetchLinks: "product.image",
+      fetchLinks: "product.item",
     },
   );
-  console.log("collections >>>>", collections);
-  collections.forEach((collection) => {
-    console.log(collection.data.products);
-  });
+
   res.render("pages/collections", {
     ...defaults,
     collections,
@@ -142,7 +139,7 @@ app.get("/detail/:uid", async (req, res) => {
   const product = await api.getByUID("product", req.params.uid, {
     fetchLinks: "collection.title",
   });
-  console.log("product>>>>>", product.data.item);
+
   res.render("pages/detail", {
     ...defaults,
     product,
